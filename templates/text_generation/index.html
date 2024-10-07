@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Qwen-coder</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/github-markdown.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/text_generation/index.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/marked.min.js' %}"></script>
+</head>
+
+<body>
+    <div class="container main">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand">Qwen-Coder</a>
+                <div class="d-flex ms-auto">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">登录</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">注册</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container mt-4" style="max-width: 96%">
+            <div class="row">
+                <!-- 左侧代码输入框 -->
+                <div class="col-6">
+                    <h5>问题输入</h5>
+                    <label for="codeInput" class="form-label" style="display: none">问题输入</label>
+                    <textarea id="codeInput" class="form-control"></textarea>
+                    <div class="test-case">
+                        <button id="generateBtn" class="btn btn-primary" style="margin-right: 10px;">提交</button>
+                        <label for="languageInput" class="form-label" style="display: none">语言选择</label>
+                        <select id="languageInput" class="form-select custom-select" style="max-width: 150px;">
+                            <option value="python">Python</option>
+                            <option value="cpp">C++</option>
+                            <option value="java">Java</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 右侧代码翻译结果 -->
+                <div class="col-6">
+                    <h5>问题结果</h5>
+                    <!-- 标签内容 -->
+                    <div class="tab-content active" id="text-result">
+                        <label for="codeOutput" style="display: none">结果输出</label>
+                        <textarea id="codeOutput" class="form-control"></textarea>
+                    </div>
+                    <div class="tab-content" id="markdown-result">
+                        <div id="markdownOutput" class="border p-3" style="height: 900px; overflow-y: auto;"></div>
+                    </div>
+                    <div class="tab-content" id="code-result">
+                        <div id="onlyCode" class="border p-3" style="height: 900px; overflow-y: auto;"></div>
+                    </div>
+                    <!-- 标签 -->
+                    <div id="tabs" style="margin-top: 10px;">
+                        <div class="tab active" data-target="text-result">Raw</div>
+                        <div class="tab" id="markdownBtn" data-target="markdown-result">Markdown</div>
+                        <div class="tab" id="codeBtn" data-target="code-result">Code</div>
+                    </div>
+                     <!-- 测试用例 -->
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="col-6">
+                            <div class="test-case">
+                                <h5>测试用例输入</h5>
+                                <label for="languageSelect" class="form-label" style="display: none">语言选择</label>
+                                <select id="languageSelect" class="form-select custom-select" style="max-width: 150px; margin: 0 10px;">
+                                    <option value="python">Python</option>
+                                    <option value="cpp">C++</option>
+                                    <option value="java">Java</option>
+                                </select>
+                                <button id="runTestBtn" class="btn btn-success">运行测试</button>
+                            </div>
+                            <textarea id="testInput" class="form-control" placeholder="输入测试用例..."></textarea>
+                        </div>
+                        <div class="col-6">
+                            <div class="test-case">
+                                <h5 >测试输出</h5>
+                            </div>
+                            <textarea id="testOutput" class="form-control" placeholder="测试输出..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/text_generation/index.js' %}"></script>
+</body>
+
+</html>

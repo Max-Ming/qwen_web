@@ -1,0 +1,88 @@
+body {
+    /* background-image: url("/static/image/background.jpg"); */
+    background-color: #f5f5f5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.main {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+.container {
+    padding: 0;
+}
+
+textarea {
+    height: 900px;
+    font-size: 16px;
+    resize: none;
+}
+
+.markdown_output {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.tab {
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+.tab.active {
+    background: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+#testInput {
+    height: 200px;
+}
+
+#testOutput {
+    height: 200px;
+}
+
+.custom-select {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.2s ease-in-out;
+    width: auto;
+}
+
+.custom-select:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.custom-select option {
+    background-color: #ffffff;
+    color: #212529;
+}
+
+.test-case {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    padding: 0 0 4px 0;
+}
+
+h5 {
+    margin: 0;
+}
