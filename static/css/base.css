@@ -1,0 +1,18 @@
+body {
+    /* background-image: url("/static/image/background.jpg"); */
+    background-color: #f5f5f5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.main {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+.container {
+    padding: 0;
+}

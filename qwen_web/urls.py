@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    path('', include('text_generation.urls'), name='home'),
     path('admin/', admin.site.urls),
     path('text_generation/', include('text_generation.urls'), name='text_generation'),
 ]
